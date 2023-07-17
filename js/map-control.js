@@ -2,11 +2,11 @@ window.onload = function() {
 
     $(".startStory").on('click', function() {
         $("#mapOverlay").fadeOut("slow")
-        ga('send', 'event', 'start-button', 'clicked');
+        gtag('send', 'event', 'start-button', 'clicked');
     });
 
     $("#skip-stories").on('click', function() {
-        ga('send', 'event', 'story started but skipped', 'clicked');
+        gtag('send', 'event', 'story started but skipped', 'clicked');
     });    
     
     // Instantiate new map object, place it in 'map' element -- Uses Leaflet.js
@@ -132,9 +132,9 @@ window.onload = function() {
                 cartodb.log.log(e, latlng, pos, data, layerNumber);
                 drawToilet([data.toilets_full_flush, data.toilets_chemical, data.toilets_container, data.toilets_portable, data.toilets_other], data.is_cluster);
                 drawConstraints([data.cns_waterbodies, data.cns_private_land, data.cns_metro_roads, data.cns_servitude, data.cns_biodiversity_core1, data.cns_biodiversity_core2, data.cns_power_lines, data.cns_railway, data.cns_landfill_1, data.cns_landfill_2, data.cns_flood_prone, data.cns_irt, data.cns_noise_zones, data.cns_heritage, data.cns_koeberg], data.is_cluster);
-                ga('send', 'event', 'pocket', data.is_cluster, data.pocket_name);
+                gtag('send', 'event', 'pocket', data.is_cluster, data.pocket_name);
                 if (!clickedPocket) {
-                    ga('send', 'event', 'at least one pocket', 'clicked');
+                    gtag('send', 'event', 'at least one pocket', 'clicked');
                 }
                 clickedPocket = true;
             });
@@ -176,7 +176,7 @@ window.onload = function() {
             }
             
             map_object.addLayer(basemap1);
-            ga('send', 'event', 'basemap', 'satellite');
+            gtag('send', 'event', 'basemap', 'satellite');
             return true;
         });
         
@@ -186,7 +186,7 @@ window.onload = function() {
                 map_object.removeLayer(basemap2);
             }
             map_object.addLayer(basemap2);
-            ga('send', 'event', 'basemap', 'map');
+            gtag('send', 'event', 'basemap', 'map');
             return true;
         });
     
@@ -364,9 +364,9 @@ window.onload = function() {
         $('#infoDensity').addClass("hidden").hide();
         $('#infoDefault').addClass("hidden").hide();
         $('#infoBoundary').addClass("hidden").hide();
-        ga('send', 'event', 'layers', 'number of households');
+        gtag('send', 'event', 'layers', 'number of households');
         if (!clickedLayer) {
-            ga('send', 'event', 'at least one layer', 'changed');
+            gtag('send', 'event', 'at least one layer', 'changed');
         }
         clickedLayer = true;
     });
@@ -418,9 +418,9 @@ window.onload = function() {
         $('#infoDefault').addClass("hidden").hide();
         $('#infoBoundary').addClass("hidden").hide();
         $('#click-layer-zukiswa-age').addClass("hidden");                
-        ga('send', 'event', 'layers', 'age of pocket');
+        gtag('send', 'event', 'layers', 'age of pocket');
         if (!clickedLayer) {
-            ga('send', 'event', 'at least one layer', 'changed');
+            gtag('send', 'event', 'at least one layer', 'changed');
         }
         clickedLayer = true;
     });
@@ -456,9 +456,9 @@ window.onload = function() {
         $('#infoDefault').addClass("hidden").hide();
         $('#infoBoundary').addClass("hidden").hide();
         $('#click-layer-asithandile').addClass("hidden");
-        ga('send', 'event', 'layers', 'temporary toilets');
+        gtag('send', 'event', 'layers', 'temporary toilets');
         if (!clickedLayer) {
-            ga('send', 'event', 'at least one layer', 'changed');
+            gtag('send', 'event', 'at least one layer', 'changed');
         }
         clickedLayer = true;
     });
@@ -507,9 +507,9 @@ window.onload = function() {
         $('#infoDefault').addClass("hidden").hide();
         $('#infoBoundary').addClass("hidden").hide();
         $('#click-layer-zukiswa').addClass("hidden");        
-        ga('send', 'event', 'layers', 'upgrade category');
+        gtag('send', 'event', 'layers', 'upgrade category');
         if (!clickedLayer) {
-            ga('send', 'event', 'at least one layer', 'changed');
+            gtag('send', 'event', 'at least one layer', 'changed');
         }
         clickedLayer = true;
     });
@@ -538,9 +538,9 @@ window.onload = function() {
         $('#infoHousing').addClass("hidden").hide();
         $('#infoDefault').addClass("hidden").hide();
         $('#infoBoundary').addClass("hidden").hide();
-        ga('send', 'event', 'layers', 'housing density');
+        gtag('send', 'event', 'layers', 'housing density');
         if (!clickedLayer) {
-            ga('send', 'event', 'at least one layer', 'changed');
+            gtag('send', 'event', 'at least one layer', 'changed');
         }
         clickedLayer = true;
     });
@@ -581,9 +581,9 @@ window.onload = function() {
         $('#infoAge').addClass("hidden").hide();
         $('#infoHousing').addClass("hidden").hide();
         $('#infoDefault').addClass("hidden").hide();
-        ga('send', 'event', 'layers', 'boundary');
+        gtag('send', 'event', 'layers', 'boundary');
         if (!clickedLayer) {
-            ga('send', 'event', 'at least one layer', 'changed');
+            gtag('send', 'event', 'at least one layer', 'changed');
         }
         clickedLayer = true;
     });
@@ -712,7 +712,7 @@ window.onload = function() {
     $('#footer').addClass("hidden");
     $('#logos').addClass("hidden");
     $(".select-sublayer5").click();  
-    ga('send', 'event', 'story started', 'asithandile');                
+    gtag('send', 'event', 'story started', 'asithandile');                
     });
 
     // scene 4b -- zoomed to pocket Asithandile
@@ -766,7 +766,7 @@ window.onload = function() {
     $('#footer').addClass("hidden");
     $('#logos').addClass("hidden");
     $(".select-sublayer5").click();
-    ga('send', 'event', 'story started', 'zukiswa');                    
+    gtag('send', 'event', 'story started', 'zukiswa');                    
     });
 
     // scene 4b -- zoomed to pocket Zukiswa
@@ -824,7 +824,7 @@ window.onload = function() {
 
     $(".text").addClass("hidden");
     $(".scene5-text-asithandile").removeClass("hidden"); 
-    ga('send', 'event', 'story halfway', 'asithandile');                                   
+    gtag('send', 'event', 'story halfway', 'asithandile');                                   
     });
 
     // scene 5 -- with change layer buttons Zukiswa
@@ -845,7 +845,7 @@ window.onload = function() {
 
     $(".text").addClass("hidden");
     $(".scene5-text-zukiswa").removeClass("hidden");
-    ga('send', 'event', 'story halfway', 'zukiswa');                                                   
+    gtag('send', 'event', 'story halfway', 'zukiswa');                                                   
     });
 
     // scene 6 -- changed text Asithandile
@@ -919,7 +919,7 @@ window.onload = function() {
 
     $(".text").addClass("hidden");
     $(".scene8-text-asithandile").removeClass("hidden");
-    ga('send', 'event', 'story finished', 'asithandile');                    
+    gtag('send', 'event', 'story finished', 'asithandile');                    
     });
 
     // scene 8 -- three options Zukiswa
@@ -933,7 +933,7 @@ window.onload = function() {
 
     $(".text").addClass("hidden");
     $(".scene8-text-zukiswa").removeClass("hidden");
-    ga('send', 'event', 'story finished', 'zukiswa');                
+    gtag('send', 'event', 'story finished', 'zukiswa');                
     });    
 
     // explore map
@@ -959,7 +959,7 @@ window.onload = function() {
     $("#layer-select-tiny").removeClass("hidden");                        
     $("#layer-select-mobile").removeClass("hidden"); 
     $("#skip-stories").addClass("hidden");    
-    ga('send', 'event', 'explore-map', 'clicked');
+    gtag('send', 'event', 'explore-map', 'clicked');
     map_object.invalidateSize(true);
     });
 
@@ -980,7 +980,7 @@ window.onload = function() {
     $(".open-layertext").on('click', function() {
     $(".layer-info").removeClass("hidden");
     $(".open-layertext").addClass("hidden");
-    ga('send', 'event', 'skip-to-map', 'clicked');            
+    gtag('send', 'event', 'skip-to-map', 'clicked');            
     });
 }
 //closes function
