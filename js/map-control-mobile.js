@@ -56,9 +56,9 @@ window.onload = function() {
         attribution: 'CartoDB'
     }).addTo(map_object);
     // add new basemap option
-    var basemap1 = L.tileLayer('https://maps.nlp.nokia.com/maptiler/v2/maptile/newest/satellite.day/{z}/{x}/{y}/256/png8?lg=eng&token=61YWYROufLu_f8ylE0vn0Q&app_id=qIWDkliFCtLntLma2e6O', {
-        attribution: 'Nokia'
-    });
+    var basemap1 = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: 'CartoDB'
+    }).addTo(map_object);
     
     // Basemap function
     // Add data layer to your map
